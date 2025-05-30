@@ -12,13 +12,10 @@
         :root {
             --bg-color: #f8f9fa;
             --text-color: #333;
-            --section-bg: linear-gradient(145deg, #ffffff, #f5f5f5);
-            --section-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            --section-hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --contact-bg: linear-gradient(145deg, #f0f5ff, #e6f0ff);
-            --contact-shadow: 0 5px 15px rgba(74, 108, 247, 0.1);
-            --game-bg: linear-gradient(145deg, #fff5f0, #ffe6e6);
-            --game-shadow: 0 5px 15px rgba(247, 74, 74, 0.1);
+            --section-bg: #ffffff;
+            --section-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --contact-bg: #f0f5ff;
+            --game-bg: #fff5f0;
             --profile-label: #555;
             --profile-value: #333;
             --greeting-color: #4a6cf7;
@@ -30,13 +27,10 @@
         .dark-mode {
             --bg-color: #1a1a1a;
             --text-color: #e0e0e0;
-            --section-bg: linear-gradient(145deg, #2d2d2d, #252525);
-            --section-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            --section-hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            --contact-bg: linear-gradient(145deg, #1a2a4a, #152238);
-            --contact-shadow: 0 5px 15px rgba(20, 60, 150, 0.2);
-            --game-bg: linear-gradient(145deg, #3a1e1e, #2a1515);
-            --game-shadow: 0 5px 15px rgba(150, 40, 40, 0.2);
+            --section-bg: #2d2d2d;
+            --section-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            --contact-bg: #1a2a4a;
+            --game-bg: #3a1e1e;
             --profile-label: #aaa;
             --profile-value: #e0e0e0;
             --greeting-color: #5d8bf4;
@@ -50,87 +44,71 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            padding: 0;
+            padding: 10px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             transition: background-color 0.3s, color 0.3s;
+            font-size: 14px;
         }
 
         .container {
-            width: 90%;
-            max-width: 500px;
-            margin: 50px auto;
+            width: 100%;
+            max-width: 350px;
+            margin: 20px auto;
             opacity: 0;
             animation: fadeIn 1s 3s forwards;
         }
 
         .section {
-            margin-bottom: 25px;
-            padding: 20px;
-            border-radius: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 12px;
             background: var(--section-bg);
             box-shadow: var(--section-shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s, background 0.3s;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--section-hover-shadow);
+            transition: all 0.3s;
         }
 
         .avatar-section {
             text-align: center;
-            position: relative;
+            padding: 20px 15px;
         }
 
         .avatar {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--bg-color);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            margin: 0 auto 15px;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .avatar:hover {
-            transform: scale(1.05);
+            border: 3px solid var(--bg-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 10px;
         }
 
         .greeting {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: var(--greeting-color);
-            margin-top: 10px;
+            margin-top: 5px;
             font-weight: 600;
-            transition: color 0.3s;
         }
 
         .time-section {
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             color: var(--time-color);
-            transition: color 0.3s;
-        }
-
-        .profile-section {
-            padding: 15px;
+            padding: 10px;
         }
 
         .profile-item {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            transition: border-color 0.3s;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .dark-mode .profile-item {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .profile-item:last-child {
@@ -138,76 +116,59 @@
         }
 
         .profile-label {
-            font-weight: 600;
+            font-weight: 500;
             color: var(--profile-label);
-            transition: color 0.3s;
         }
 
         .profile-value {
             color: var(--profile-value);
-            transition: color 0.3s;
         }
 
         .contact-section {
             text-align: center;
-            padding: 20px;
-            border-radius: 15px;
             background: var(--contact-bg);
-            box-shadow: var(--contact-shadow);
-            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        .game-section {
+            text-align: center;
+            background: var(--game-bg);
+        }
+
+        .section-title {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .contact-title {
-            font-size: 1.2rem;
             color: var(--contact-title);
-            margin-bottom: 15px;
-            font-weight: 600;
-            transition: color 0.3s;
+        }
+
+        .game-title {
+            color: var(--game-title);
         }
 
         .contact-content {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            font-size: 0.9rem;
         }
 
         .copy-btn {
             background: linear-gradient(145deg, #4a6cf7, #3a56d1);
             color: white;
             border: none;
-            padding: 8px 15px;
-            border-radius: 10px;
+            padding: 5px 10px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 0.9rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 10px rgba(74, 108, 247, 0.3);
+            font-size: 0.8rem;
+            transition: transform 0.2s;
         }
 
         .copy-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(74, 108, 247, 0.4);
-        }
-
-        .copy-btn:active {
-            transform: translateY(0);
-        }
-
-        .game-section {
-            text-align: center;
-            padding: 20px;
-            border-radius: 15px;
-            background: var(--game-bg);
-            box-shadow: var(--game-shadow);
-            transition: background 0.3s, box-shadow 0.3s;
-        }
-
-        .game-title {
-            font-size: 1.2rem;
-            color: var(--game-title);
-            margin-bottom: 15px;
-            font-weight: 600;
-            transition: color 0.3s;
+            transform: translateY(-1px);
         }
 
         .typing-container {
@@ -229,10 +190,10 @@
         }
 
         .typing-text {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             color: #4a6cf7;
             font-weight: 600;
-            border-right: 3px solid #4a6cf7;
+            border-right: 2px solid #4a6cf7;
             white-space: nowrap;
             overflow: hidden;
             animation: typing 1.5s steps(20, end), blink-caret 0.75s step-end infinite;
@@ -245,28 +206,24 @@
 
         .theme-switch {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 10px;
+            right: 10px;
             z-index: 1001;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             opacity: 0;
             animation: fadeIn 0.5s 3.5s forwards;
         }
 
-        .theme-switch:hover {
-            transform: scale(1.1);
-        }
-
         .theme-switch i {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #333;
         }
 
@@ -315,7 +272,7 @@
         </div>
 
         <!-- 个人信息板块 -->
-        <div class="profile-section section">
+        <div class="section">
             <div class="profile-item">
                 <span class="profile-label">姓名</span>
                 <span class="profile-value">朱杰洋</span>
@@ -344,21 +301,13 @@
 
         <!-- 邮箱板块 -->
         <div class="contact-section section">
-            <div class="contact-title">邮箱</div>
+            <div class="section-title contact-title">邮箱</div>
             <div class="contact-content">
                 jieyang3333@qq.com
                 <button class="copy-btn" onclick="copyToClipboard('jieyang3333@qq.com')">复制</button>
             </div>
         </div>
 
-        <!-- 和平精英板块 -->
-        <div class="game-section section">
-            <div class="game-title">和平精英</div>
-            <div class="contact-content">
-                Vosat
-                <button class="copy-btn" onclick="copyToClipboard('Vosat')">复制</button>
-            </div>
-        </div>
     </div>
 
     <script>
@@ -382,7 +331,13 @@
         // 更新时间
         function updateTime() {
             const now = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const options = { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit'
+            };
             document.getElementById('current-time').textContent = now.toLocaleDateString('zh-CN', options);
         }
         setInterval(updateTime, 1000);
